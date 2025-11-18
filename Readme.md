@@ -1,7 +1,10 @@
-📌 Práctica 03 — Validación del Software con Pruebas Automatizadas
+🚀 Práctica 03 — Validación del Software con Pruebas Automatizadas
 
-Este proyecto corresponde a la Práctica 03 de la asignatura Gestión de la Calidad de Software, Plataformas y Aplicaciones, en la carrera de Negocios Digitales.
-Su propósito es implementar procesamiento de datos tributarios del SRI y validarlo mediante pruebas unitarias escritas en Python usando el módulo unittest.
+📘 Asignatura: Gestión de la Calidad de Software
+🎓 Carrera: Negocios Digitales
+🧪 Tema: Pruebas unitarias y análisis de datos tributarios (SRI) en Python
+
+Este proyecto implementa funciones de análisis sobre datos tributarios del SRI y valida su correcto funcionamiento mediante pruebas automatizadas con unittest. Además, se integra la herramienta coverage para evaluar la cobertura de código.
 
 📂 Estructura del Proyecto
 laboratorio-3/
@@ -14,136 +17,128 @@ laboratorio-3/
 │   └── test_analizador.py
 └── README.md
 
-🎯 Objetivo
+🎯 Objetivos del Proyecto
 
-Implementar funciones de análisis tributario usando Python y validarlas con pruebas automatizadas que garanticen su precisión, coherencia y comportamiento correcto frente a errores.
+✔️ Procesar datos tributarios reales del SRI
+✔️ Implementar funciones analíticas con Python
+✔️ Validar resultados utilizando pruebas unitarias
+✔️ Medir la calidad del software mediante cobertura de código
+✔️ Aplicar buenas prácticas de programación y versionado con GitHub
 
-🛠️ Tecnologías Utilizadas
+🛠️ Tecnologías y Herramientas
+Herramienta	Uso
+🐍 Python 3.10+	Procesamiento y pruebas
+🎨 Visual Studio Code	Edición del código
+🧪 unittest	Pruebas automatizadas
+📈 coverage.py	Medición de cobertura
+📄 CSV del SRI	Datos reales para análisis
+📄 Descripción de la Funcionalidad
 
-Python 3.10+
+La clase Analizador ubicada en src/procesador.py procesa el archivo sri_ventas_2024.csv y permite obtener:
 
-Editor: Visual Studio Code
+🔹 Funciones Principales
+📌 ventas_totales_por_provincia()
 
-Librerías estándar:
+Retorna un diccionario con el total de ventas por cada provincia.
 
-csv
+📌 ventas_por_provincia(nombre)
 
-unittest
-
-Librería de cobertura de código:
-
-coverage
-
-📄 Descripción del Proyecto
-
-El programa analiza información del archivo sri_ventas_2024.csv, el cual contiene datos tributarios como ventas, compras, exportaciones e importaciones por provincia.
-
-Se implementa una clase Analizador con funciones de procesamiento:
-
-✔ Funciones principales
-
-ventas_totales_por_provincia()
-Retorna un diccionario con el total de ventas agrupado por provincia.
-
-ventas_por_provincia(nombre)
-Retorna el total de ventas para una provincia específica.
-
-✔ Entrada principal del programa
-
-En app.py, se muestran:
-
-Totales por provincia
-
-Consulta interactiva de una provincia ingresada por teclado
-
-🧪 Pruebas Unitarias
-
-Las pruebas en tests/test_analizador.py validan:
-
-Que la función retorne un diccionario.
-
-Que los valores sean numéricos y no negativos.
-
-Que exista coherencia en la cantidad de provincias.
-
-Que las provincias consultadas existan.
-
-Validación explícita de 3 provincias con valores esperados.
-
-📊 Estadísticas adicionales implementadas (Trabajo autónomo)
-
-(Selecciona según lo que hayas implementado)
-
-Ejemplo:
-
-Provincia con mayor volumen de importaciones
-
-Porcentaje de ventas con tarifa 0% respecto al total por provincia
-
-Exportaciones totales por mes
-
-Incluye pruebas unitarias para validar los cálculos adicionales.
-
-📈 Cobertura de Código
-
-Para medir la cobertura del proyecto:
-
-1. Instalar Coverage
-pip install coverage
-
-2. Ejecutar las pruebas
-coverage run -m unittest discover
-
-3. Generar el reporte
-coverage report -m
-
-4. (Opcional) Generar un reporte HTML
-coverage html
-
-
-Se creará una carpeta /htmlcov que podrás abrir en tu navegador.
-
-Incluye aquí tu porcentaje real de cobertura.
-Ejemplo:
-
-Cobertura total del proyecto: 87%
+Devuelve el total de ventas de la provincia indicada.
 
 ▶️ Ejecución del Programa
+
+Para correr la aplicación principal:
+
 python app.py
 
 
-Salida esperada:
+📤 Salida esperada:
 
-Listado de ventas totales por provincia
+Totales de ventas agrupados por provincia
 
 Solicitud de ingreso de una provincia
 
-Resultado de ventas de la provincia consultada
+Visualización de la venta total de la provincia consultada
 
-📸 Evidencias
+🧪 Pruebas Unitarias
+
+Las pruebas están en tests/test_analizador.py y verifican:
+
+✔️ El retorno correcto de estructuras (diccionarios)
+✔️ Que los valores sean numéricos y no negativos
+✔️ Que el número de provincias sea coherente
+✔️ Validación de provincias existentes
+✔️ Comparación de valores esperados en 3 provincias
+
+Ejecutar las pruebas:
+
+python -m unittest discover
+
+📊 Estadísticas Adicionales (Trabajo Autónomo)
+
+📌 Puedes modificar esta sección según lo que implementaste
+
+Ejemplos incluidos:
+
+📈 Provincia con mayor volumen de importaciones
+
+🧮 Porcentaje de ventas con tarifa 0% por provincia
+
+🌍 Exportaciones totales agrupadas por mes
+
+Cada una incluye sus respectivas pruebas unitarias.
+
+📈 Cobertura de Código
+📥 Instalar Coverage
+pip install coverage
+
+🧪 Ejecutar pruebas con cobertura
+coverage run -m unittest discover
+
+📊 Ver reporte en consola
+coverage report -m
+
+🌐 Generar reporte HTML
+coverage html
+
+
+📌 El reporte se almacenará en:
+
+htmlcov/index.html
+
+
+Ejemplo de cobertura alcanzada:
+🔥 Cobertura total del proyecto: 87%
+
+📸 Evidencias Requeridas
 
 Incluye en tu repositorio:
 
-Captura de salida de la ejecución de app.py
+📷 Captura de ejecución de app.py
+📷 Captura de ejecución de pruebas unitarias
+📷 Captura del reporte de coverage
+📂 Archivos .py funcionales
 
-Captura de ejecución de pruebas unitarias
+📝 Conclusiones
 
-Captura del reporte de cobertura
+🧩 Se dominó el uso del módulo unittest para validar funciones.
 
-✔ Conclusiones
+🔍 Se comprendió cómo diseñar pruebas coherentes para validar tanto cálculos correctos como entradas no válidas.
 
-Se comprendió el uso del módulo unittest para validar funciones de forma automática.
+📊 Se analizó información tributaria real del SRI.
 
-Se reforzó la importancia de diseñar casos de prueba para asegurar confiabilidad del software.
+🛡️ Se midió la calidad del código utilizando la librería coverage.
 
-Se aplicó análisis real sobre datos tributarios del SRI.
-
-Se utilizó correctamente la herramienta coverage para medir calidad del código.
+🚀 Se aplicaron buenas prácticas de desarrollo y versionado con GitHub.
 
 📚 Referencias
 
-Python unittest documentation
+📘 Python Docs — unittest
 
-SRI Dataset — Ventas y Compras
+🏛️ Servicio de Rentas Internas (SRI) — Datos Ventas/Compras
 
-Video tutoriales y documentación adicional sobre pruebas automatizadas en Python
+📗 El Libro de Python — Testing
+
+🎥 DigitalOcean — Unit Test Tutorial
+
+🎬 Ejercicios con unittest — Sergio Infante
