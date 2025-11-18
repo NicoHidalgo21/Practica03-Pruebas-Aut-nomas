@@ -7,7 +7,6 @@ def main():
     print("Ventas totales por provincia:")
     resumen = analizador.ventas_totales_por_provincia()
     
-    # Obtener y ordenar las provincias alfabéticamente
     provincias_ordenadas = sorted(resumen.keys())
     
     for prov in provincias_ordenadas:
@@ -16,31 +15,41 @@ def main():
 
     print("\nCompras para una provincia")
     
-    # 1. Obtener la lista de provincias válidas (en mayúsculas para un chequeo consistente)
     provincias_validas = {prov.upper() for prov in resumen.keys()} 
     
     provincia = ""
-    provincia_formateada = "" # Para almacenar la provincia con el formato correcto
+    provincia_formateada = ""
 
-    # 2. Bucle de validación para pedir la provincia hasta que sea válida
     while provincia not in provincias_validas:
-        # Se pide la provincia y se convierte a mayúsculas para la validación
         entrada = input("\tIngrese el nombre de una provincia: ")
         provincia = entrada.strip().upper() 
         
         if provincia in provincias_validas:
-            # Encontramos el nombre original de la provincia (con la capitalización correcta)
             for key in resumen.keys():
                 if key.upper() == provincia:
                     provincia_formateada = key
                     break
-        else:
-            # Si no es válida, no sale nada, solo se vuelve a pedir
-            pass 
-            
-    # Una vez que la provincia es válida y está en el formato correcto
+
     ventas = analizador.ventas_por_provincia(provincia_formateada)
     print(f"\tVentas de {provincia_formateada}: ${ventas:,.2f}")
+
+    # ======================================================
+    # NUEVA ESTADÍSTICA 1: EXPORTACIONES TOTALES POR MES
+    # ======================================================
+    print("\nExportaciones totales por mes:")
+
+    exportaciones = analizador.exportaciones_totales_por_mes()
+
+    for mes in sorted(exportaciones.keys()):
+        print(f"\tMes {mes}: ${exportaciones[mes]:,.2f}")
+
+    # ======================================================
+    # NUEVA ESTADÍSTICA 2: PROVINCIA CON MAYOR IMPORTACIÓN
+    # ======================================================
+    print("\nProvincia con mayor volumen de importaciones:")
+
+    provincia_top = analizador.provincia_mayor_importacion()
+    print(f"\tLa provincia con mayor importación es: {provincia_top.upper()}")
 
 if __name__ == "__main__":
     main()
