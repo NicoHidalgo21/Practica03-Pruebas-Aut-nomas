@@ -1,5 +1,5 @@
 # ==============================
-# ARCHIVO .gitignore PARA PYTHON + VS CODE
+# .gitignore para Python + VS Code + Coverage + Entorno Virtual + Datos Locales
 # ==============================
 
 # --- Archivos y carpetas del sistema ---
@@ -15,6 +15,8 @@ env/
 .venv/
 ENV/
 env.bak/
+# Agrega aquí otros nombres de entorno virtual si los usas
+# mi_venv/
 
 # --- Archivos de configuración local ---
 *.env
@@ -82,6 +84,14 @@ MANIFEST
 *.pid
 docker-compose.override.yml
 
+# --- Archivos de datos locales generados por tests o por el proyecto ---
+datos/*.json
+datos/*.csv
+datos/*.xlsx
+datos/*.log
+# Si quieres ignorar toda la carpeta de datos, descomenta la siguiente línea:
+# datos/
+
 # --- Archivos personalizados del usuario ---
-# (Aquí puedes añadir tus archivos locales que no quieres subir al repositorio)
-# ej. datos.csv, credenciales.json, resultados.xlsx
+# Añade aquí cualquier archivo local que no quieras subir al repositorio
+# por ejemplo credenciales locales, configuraciones temporales, etc.
