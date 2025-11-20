@@ -131,6 +131,37 @@ Incluye en tu repositorio:
 
 🚀 Se aplicaron buenas prácticas de desarrollo y versionado con GitHub.
 
+
+
+🆕 Actualización del Proyecto 19 de noviembre
+✔ Configuración y Activación del Entorno Virtual (venv)
+
+Se creó y activó un entorno virtual para aislar las dependencias del proyecto.
+
+Comandos usados:
+python -m venv venv
+source venv/Scripts/activate
+
+✔ Instalación de Coverage
+
+Se instaló la herramienta coverage para medir la cobertura del código.
+
+ python3 -m pip install --user coverage
+
+✔ Ejecución de Pruebas con Coverage
+
+Se ejecutaron las pruebas unitarias midiendo la cobertura:
+
+coverage run -m unittest discover -s tests -p "test_*.py"
+
+✔ Generación del Reporte de Cobertura:
+
+Reporte HTML:
+
+coverage html
+
+Esto generó una carpeta llamada htmlcov, en el cual generó el reporte.
+
 📚 Referencias
 
 📘 Python Docs — unittest
